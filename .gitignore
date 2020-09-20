@@ -1,0 +1,6 @@
+heroku_actions.sh
+install.sh
+*.log
+*.pot
+*.pyc
+__pycache__/

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<!-- Page info section -->
+<section class="page-info-section">
+    <div class="container">
+        <h2>Get Started</h2>
+        <div class="site-beradcamb">
+            <a href="{% url 'cryptway:home' %}">Home</a>
+            <span><i class="fa fa-angle-right"></i> Sign in</span>
+        </div>
+    </div>
+</section>
+<!-- Page info end -->
+
+<section class="contact-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="sign-carousel" id="map-canvas">
+                    <form class="contact-form signin-form" method="POST" style="padding-right: 0;">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <center>
+                                    <h2> Login </h2><br />
+                                </center>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div>
+                                        <input type="email" class="check-form" placeholder="email" required>
+                                        <span><i class="ti-check"></i></span>
+
+                                    </div>
+                                </div>
+                            </div><br />
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div>
+                                        <input type="password" class="check-form" placeholder="password" required>
+                                        <span><i class="ti-check"></i></span>
+
+                                    </div>
+                                </div>
+                            </div><br />
+                            <div class="col-md-12">
+                                <center>
+                                    <button class="site-btn sb-gradients mt-4">Login</button>
+                                    <br /><br />
+                                </center>
+                            </div>
+                            <div class="col-md-12">
+                                <center>
+                                    <p>
+                                        Or <a href="{% url 'cryptway:signup' %}"> Create account now</a>
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-lg-7 mt-5 mt-lg-0">
+                <div class="map" id="map-canvas" style="max-height: 670px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

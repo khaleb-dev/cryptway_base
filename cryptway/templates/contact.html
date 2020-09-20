@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<!-- Page info section -->
+<section class="page-info-section">
+	<div class="container">
+		<h2>Contact Us</h2>
+		<div class="site-beradcamb">
+			<a href="{% url 'cryptway:home' %}">Home</a>
+			<span><i class="fa fa-angle-right"></i> Contact us</span>
+		</div>
+	</div>
+</section>
+<!-- Page info end -->
+
+{% if first_name %}
+<br /><br /><br />
+<center>
+	<h2>Thanks {{ first_name }}!</h2>
+	<p>we recieved your message and will respond shortly ...</p>
+</center>
+<br /><br /><br />
+{% else %}
+
+<!-- Contact section -->
+<section class="contact-page spad">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7">
+				<form class="contact-form" , method='POST'>
+					{% csrf_token %}
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<input name='first-name' class="check-form" type="text" placeholder="First Name*:">
+								<span><i class="ti-check"></i></span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input name='last-name' class="check-form" type="text" placeholder="Last Name*:">
+								<span><i class="ti-check"></i></span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input name='email' class="check-form" type="email" placeholder="Email Adress*:">
+								<span><i class="ti-check"></i></span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input name='phone-number' class="check-form" type="tel" placeholder="Phone Number*:">
+								<span><i class="ti-check"></i></span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<textarea name='message' placeholder="Tell us about your question!"></textarea>
+							</div>
+							<h5 class="mb-3">Way to Contacts<span>*</span>:</h5>
+							<div class="contact-type">
+								<label class="ct-label" for="phone">Phone
+									<input type="radio" name="radio" id="phone" value=0>
+									<span class="checkmark"></span>
+								</label>
+								<label class="ct-label" for="email">Email
+									<input type="radio" name="radio" id="email" value=1 checked>
+									<span class="checkmark"></span>
+								</label>
+								<label class="ct-label" for="other">Other
+									<input type="radio" name="radio" id="other" value=2>
+									<span class="checkmark"></span>
+								</label>
+							</div>
+
+							<button class="site-btn sb-gradients mt-4">Submit form</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 mt-5 mt-lg-0">
+				<div class="map" id="map-canvas">
+					<iframe style="width: 100%; height: 100%;"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2141.9124691223074!2d-74.00554278984688!3d40.60513928228057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1598248116172!5m2!1sen!2sng"
+						frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Contact section end -->
+{% endif %}
+
+<!-- Newsletter section -->
+<section class="newsletter-section gradient-bg">
+	<div class="container text-white">
+		<div class="row">
+			<div class="col-lg-7 newsletter-text">
+				<h2>Subscribe to our Newsletter</h2>
+				<p>Sign up for our weekly industry updates, insider perspectives and in-depth market analysis.</p>
+			</div>
+			<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+				<form class="newsletter-form">
+					<input type="text" placeholder="Enter your email">
+					<button>Get Started</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Newsletter section end -->
+
+{% endblock %}
